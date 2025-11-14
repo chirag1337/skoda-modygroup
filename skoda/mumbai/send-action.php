@@ -1,7 +1,7 @@
 <?php
 session_start();
 $connection = mysqli_connect("p3nlmysql11plsk.secureserver.net:3306", "modygroup_user", "Modygroup@321", "modygroup_leads");
-// $connection = mysqli_connect("localhost", "root", "Modygroup@321", "modygroup_leads");
+// $connection = mysqli_connect("localhost", "root", "", "modygroup_leads");
 
 if (isset($_POST['btnSubmitData'])) {
     $name = $_POST['name'];
@@ -10,6 +10,7 @@ if (isset($_POST['btnSubmitData'])) {
     $location = $_POST['location'];
     $model = $_POST['model'];
     $salesORservice = $_POST['salesORservice'];
+    $city = 'Mumbai';
 
     if (empty($name) || strlen($name) < 2) {
         echo json_encode(['status' => 400, 'message' => 'Please enter a valid name']);
@@ -48,7 +49,7 @@ if (isset($_POST['btnSubmitData'])) {
         exit;
     }
 
-    $query = "INSERT INTO skoda (name, mobile, email, location, model, salesORservice) VALUES ('$name', '$mobile', '$email', '$location', '$model', '$salesORservice')";
+    $query = "INSERT INTO skoda (name, mobile, email,city, location, model, salesORservice) VALUES ('$name', '$mobile', '$email', '$city', '$location', '$model', '$salesORservice')";
     $query_run = mysqli_query($connection, $query);
 
 

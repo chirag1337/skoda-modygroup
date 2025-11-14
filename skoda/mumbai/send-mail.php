@@ -37,10 +37,10 @@ if (isset($_POST['btnSubmitData'])) {
         $mail->setFrom('groupmody@gmail.com', 'New Entry - Skoda');
         // $mail->addAddress('crhead.sales@skoda-modyindiacars.co.in');
         // $mail->addAddress('vp.sales@skoda-modyindiacars.co.in');
-        // $mail->addAddress('chirag@ottoedge.com');
+        $mail->addAddress('chirag@ottoedge.com');
         // $mail->addAddress('gorav@ottoedge.com');
         // $mail->addAddress('hywel@ottoedge.com');
-        $mail->addAddress('ajay@ottoedge.com');
+        // $mail->addAddress('ajay@ottoedge.com');
       
         //        $mail->addCC('gopalgonda@gmail.com');
 
