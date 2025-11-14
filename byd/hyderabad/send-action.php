@@ -1,6 +1,6 @@
 <?php
 session_start();
-$connection = mysqli_connect("p3nlmysql11plsk.secureserver.net:3306", "modygroup_user", "Modygroup@321", "modygroup_leads");
+$connection = mysqli_connect("34.28.236.146:3306", "skoda-ottomac", "skod@Ottomac", "modygroup_leads");
 // $connection = mysqli_connect("localhost", "root", "", "modygroup_leads");
 
 if (isset($_POST['btnSubmitData'])) {
