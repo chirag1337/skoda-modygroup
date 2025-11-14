@@ -1,7 +1,7 @@
 <?php
 session_start();
 $connection = mysqli_connect("p3nlmysql11plsk.secureserver.net:3306", "modygroup_user", "Modygroup@321", "modygroup_leads");
-// $connection = mysqli_connect("localhost", "root", "Modygroup@321", "modygroup_leads");
+// $connection = mysqli_connect("localhost", "root", "Modygroup@321", "modygroup_leads");       
 
 if (isset($_POST['btnSubmitData'])) {
     $name = $_POST['name'];
