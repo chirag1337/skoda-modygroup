@@ -24,10 +24,10 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `skoda`
+-- Table structure for table `byd`
 --
 
-CREATE TABLE `skoda` (
+CREATE TABLE `byd` (
   `id` int(11) NOT NULL,
   `name` varchar(255) NOT NULL,
   `mobile` varchar(20) NOT NULL,
@@ -43,9 +43,9 @@ CREATE TABLE `skoda` (
 --
 
 --
--- Indexes for table `skoda`
+-- Indexes for table `byd`
 --
-ALTER TABLE `skoda`
+ALTER TABLE `byd`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -53,9 +53,9 @@ ALTER TABLE `skoda`
 --
 
 --
--- AUTO_INCREMENT for table `skoda`
+-- AUTO_INCREMENT for table `byd`
 --
-ALTER TABLE `skoda`
+ALTER TABLE `byd`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 COMMIT;
 
