@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 14, 2025 at 05:34 AM
+-- Generation Time: Nov 14, 2025 at 10:21 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -32,6 +32,7 @@ CREATE TABLE `vw` (
   `name` varchar(255) NOT NULL,
   `mobile` varchar(20) NOT NULL,
   `email` varchar(200) NOT NULL,
+  `city` varchar(20) DEFAULT NULL,
   `location` varchar(250) NOT NULL,
   `model` varchar(250) NOT NULL,
   `salesORservice` varchar(20) NOT NULL,
