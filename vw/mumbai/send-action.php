@@ -48,7 +48,7 @@ if (isset($_POST['btnSubmitData'])) {
         exit;
     }
 
-    $query = "INSERT INTO vw_leads (name, mobile, email, location, model, salesORservice) VALUES ('$name', '$mobile', '$email', '$location', '$model', '$salesORservice')";
+    $query = "INSERT INTO vw (name, mobile, email, location, model, salesORservice) VALUES ('$name', '$mobile', '$email', '$location', '$model', '$salesORservice')";
     $query_run = mysqli_query($connection, $query);
 
 

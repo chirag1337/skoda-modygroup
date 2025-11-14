@@ -48,7 +48,7 @@ if (isset($_POST['btnSubmitData'])) {
         exit;
     }
 
-    $query = "INSERT INTO byd_leads (name, mobile, email, location, model, salesORservice) VALUES ('$name', '$mobile', '$email', '$location', '$model', '$salesORservice')";
+    $query = "INSERT INTO byd (name, mobile, email, location, model, salesORservice) VALUES ('$name', '$mobile', '$email', '$location', '$model', '$salesORservice')";
     $query_run = mysqli_query($connection, $query);
 
 
