@@ -19,6 +19,7 @@ if (isset($_POST['btnSubmitData'])) {
     $location = $_POST['location'];
     $model = $_POST['model'];
     $salesORservice = $_POST['salesORservice'];
+    $city = 'Mumbai';
 
     //Create an instance; passing `true` enables exceptions
     $mail = new PHPMailer(true);
@@ -35,12 +36,12 @@ if (isset($_POST['btnSubmitData'])) {
 
         //Recipients
         $mail->setFrom('groupmody@gmail.com', 'New Entry - Skoda');
-        // $mail->addAddress('crhead.sales@skoda-modyindiacars.co.in');
-        // $mail->addAddress('vp.sales@skoda-modyindiacars.co.in');
+        $mail->addAddress('crhead.sales@skoda-modyindiacars.co.in');
+        $mail->addAddress('vp.sales@skoda-modyindiacars.co.in');
         $mail->addAddress('chirag@ottoedge.com');
-        // $mail->addAddress('gorav@ottoedge.com');
-        // $mail->addAddress('hywel@ottoedge.com');
-        // $mail->addAddress('ajay@ottoedge.com');
+        $mail->addAddress('gorav@ottoedge.com');
+        $mail->addAddress('hywel@ottoedge.com');
+        $mail->addAddress('ajay@ottoedge.com');
       
         //        $mail->addCC('gopalgonda@gmail.com');
 
@@ -57,6 +58,9 @@ if (isset($_POST['btnSubmitData'])) {
                 </tr>
                 <tr>
                 <td>Email:</td><td>$email</td>
+                </tr>
+                <tr>
+                <td>City:</td><td>$city</td>
                 </tr>
                 <tr>
                     <th>Model </th>

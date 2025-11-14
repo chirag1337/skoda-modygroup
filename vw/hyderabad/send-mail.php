@@ -19,7 +19,8 @@ if (isset($_POST['btnSubmitData'])) {
     $location = $_POST['location'];
     $model = $_POST['model'];
     $salesORservice = $_POST['salesORservice'];
-
+    $city = 'Hyderabad'
+;
     if (empty($name) || strlen($name) < 2) {
         echo json_encode(['status' => 400, 'message' => 'Please enter a valid name']);
         exit;
@@ -96,6 +97,10 @@ if (isset($_POST['btnSubmitData'])) {
                 <tr>
                     <td>Email:</td>
                     <td>$email</td>
+                </tr>
+                <tr>
+                    <td>City:</td>
+                    <td>$city</td>
                 </tr>
                 <tr>
                     <th>Model </th>
