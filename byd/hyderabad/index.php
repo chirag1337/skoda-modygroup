@@ -2,6 +2,15 @@
 <html lang="en">
 
 <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/x-icon" href="assets/images/favicon.png">
+    <title>BYD Hyderabad</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css?v=2.0">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17373776226"></script>
     <script>
@@ -11,15 +20,26 @@
 
         gtag('config', 'AW-17373776226');
     </script>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="icon" type="image/x-icon" href="assets/images/favicon.png">
-    <title>BYD Hyderabad</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="assets/css/style.css?v=2.0">
 </head>
 
 <body>
+    <?php session_start(); ?>
+
+    <?php if (isset($_SESSION['error'])): ?>
+    <script>
+        $(document).ready(function () {
+            toastr.error("<?= $_SESSION['error']; ?>");
+        });
+    </script>
+    <?php unset($_SESSION['error']); endif; ?>
+
+    <?php if (isset($_SESSION['success'])): ?>
+    <script>
+        $(document).ready(function () {
+            toastr.success("<?= $_SESSION['success']; ?>");
+        });
+    </script>
+    <?php unset($_SESSION['success']); endif; ?>
     <header>
         <div class="container">
             <div style="display: flex;justify-content: space-between;align-items: center;">
@@ -189,8 +209,6 @@
             <p>&copy; <?php echo date("Y"); ?> <a href="https://modygroup.co.in/" target="_blank">Mody Group</a></p>
         </div>
     </footer>
-
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.5/dist/jquery.validate.min.js"></script>
 
     <script>

@@ -74,11 +74,11 @@ if (isset($_POST['btnSubmitData'])) {
 
         //Recipients
         $mail->setFrom('groupmody@gmail.com');
-        // $mail->addAddress('saleshead@metrohonda.in');
-        // $mail->addAddress('ceo@metrohonda.in');
-        $mail->addAddress('chirag@ottoedge.com');  
-        // $mail->addAddress('gorav@ottoedge.com');
-        // $mail->addAddress('hywel@ottoedge.com');
+        $mail->addAddress('saleshead@metrohonda.in');
+        $mail->addAddress('ceo@metrohonda.in');
+        // $mail->addAddress('chirag@ottoedge.com');  
+        $mail->addAddress('gorav@ottoedge.com');
+        $mail->addAddress('hywel@ottoedge.com');
       
         //        $mail->addCC('gopalgonda@gmail.com');
 
@@ -114,15 +114,18 @@ if (isset($_POST['btnSubmitData'])) {
 
         if ($mail->send()) {     
             $_SESSION['form_submitted'] = true;
+            $_SESSION['success'] = "Mail sent successfully!";
             header("Location: thankyou.php");
             exit();
         } else {
+            $_SESSION['error'] = "Mail not sent!";  
             header('Location: index.php');
             exit();
         }
 
     } catch (Exception $e) {
         // $_SESSION['status'] = "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
+        $_SESSION['error'] = "Mail not sent! Error: ";
         header('Location: index.php');
         exit();
     }

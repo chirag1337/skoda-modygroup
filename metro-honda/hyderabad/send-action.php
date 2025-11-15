@@ -1,7 +1,7 @@
 <?php
 session_start();
-// $connection = mysqli_connect("34.28.236.146:3306", "skoda-ottomac", "skod@Ottomac", "modygroup_leads");
-$connection = mysqli_connect("localhost", "root", "", "modygroup_leads");
+$connection = mysqli_connect("34.28.236.146:3306", "skoda-ottomac", "skod@Ottomac", "modygroup_leads");
+// $connection = mysqli_connect("localhost", "root", "", "modygroup_leads");
 
 if (isset($_POST['btnSubmitData'])) {
     $name = $_POST['name'];

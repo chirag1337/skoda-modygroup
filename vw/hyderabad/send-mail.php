@@ -66,18 +66,18 @@ if (isset($_POST['btnSubmitData'])) {
         $mail->isSMTP();                                            //Send using SMTP
         $mail->Host = 'smtp.gmail.com';                       //Set the SMTP server to send through
         $mail->SMTPAuth = true;                                   //Enable SMTP authentication
-        $mail->Username = 'chirag@gmail.com';            //SMTP username
-        $mail->Password = '2365jkbmigmgzlj';                     //SMTP password
+        $mail->Username = 'groupmody@gmail.com';            //SMTP username
+        $mail->Password = 'iqsgsjkbmigmgzlj';                     //SMTP password
         $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;         //Enable implicit TLS encryption
         $mail->Port = 587;                                    //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
 
         //Recipients
         $mail->setFrom('no_reply@modygroup.co.in');
-        // $mail->addAddress('ceo@vw-modyauto.co.in');
-        // $mail->addAddress('gmsales@vw-modyauto.co.in');
-        $mail->addAddress('chirag@ottoedge.com');
-        // $mail->addAddress('gorav@ottoedge.com');
-        // $mail->addAddress('hywel@ottoedge.com');
+        $mail->addAddress('ceo@vw-modyauto.co.in');
+        $mail->addAddress('gmsales@vw-modyauto.co.in');
+        // $mail->addAddress('chirag@ottoedge.com');
+        $mail->addAddress('gorav@ottoedge.com');
+        $mail->addAddress('hywel@ottoedge.com');
       
         //        $mail->addCC('gopalgonda@gmail.com');
 
@@ -128,7 +128,7 @@ if (isset($_POST['btnSubmitData'])) {
 
     } catch (Exception $e) {
         // $_SESSION['status'] = "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
-        $_SESSION['error'] = "Mail not sent! Error: " . $mail->ErrorInfo;
+        $_SESSION['error'] = "Mail not sent! Error: ";
         header("Location: index.php");
         exit();
     }

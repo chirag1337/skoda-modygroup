@@ -21,6 +21,43 @@ if (isset($_POST['btnSubmitData'])) {
     $salesORservice = $_POST['salesORservice'];
     $city = 'Hyderabad';
 
+    if (empty($name) || strlen($name) < 2) {
+        echo json_encode(['status' => 400, 'message' => 'Please enter a valid name']);
+        exit;
+    }
+
+    if (!preg_match('/^[0-9]{10,13}$/', $mobile)) {
+        echo json_encode(['status' => 400, 'message' => 'Please enter a valid mobile number']);
+        exit;
+    }
+
+    if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+        echo json_encode(['status' => 400, 'message' => 'Please enter a valid email address']);
+        exit;
+    }
+
+    $validSalesService = ["Sales", "Service"];
+    if (!in_array($salesORservice, $validSalesService)) {
+        echo json_encode(['status' => 400, 'message' => 'Invalid Sales/Service option']);
+        exit;
+    }
+
+    $validLocations = [
+        "Sales" => ["Attapur", "LB Nagar", "Karimnagar"],
+        "Service" => ["Uppal", "Karimnagar"]
+    ];
+
+    if (!isset($validLocations[$salesORservice]) || !in_array($location, $validLocations[$salesORservice])) {
+        echo json_encode(['status' => 400, 'message' => 'Invalid location for selected Sales/Service']);
+        exit;
+    }
+
+    $validModel = ["Slavia", "Kushaq", "Kodiaq", "Kylaq"];
+    if (!in_array($model, $validModel)) {
+        echo json_encode(['status' => 400, 'message' => 'Invalid model selected']);
+        exit;
+    }
+
     //Create an instance; passing `true` enables exceptions
     $mail = new PHPMailer(true);
 
@@ -36,9 +73,9 @@ if (isset($_POST['btnSubmitData'])) {
 
         //Recipients
         $mail->setFrom('groupmody@gmail.com','New Entry - Skoda');
-        // $mail->addAddress('ceo.hyd@skoda-modyindiacars.co.in');
-        // $mail->addAddress('sales.hyd@skoda-modyindiacars.co.in');
-        $mail->addAddress('chirag@ottoedge.com');
+        $mail->addAddress('ceo.hyd@skoda-modyindiacars.co.in');
+        $mail->addAddress('sales.hyd@skoda-modyindiacars.co.in');
+        // $mail->addAddress('chirag@ottoedge.com');
         $mail->addAddress('gorav@ottoedge.com');
         $mail->addAddress('hywel@ottoedge.com');
         // $mail->addAddress('ajay@ottoedge.com');
@@ -63,11 +100,11 @@ if (isset($_POST['btnSubmitData'])) {
                 <td>City:</td><td>$city</td>
                 </tr>
                 <tr>
-                    <th>Model </th>
+                    <td>Model: </td>
                     <td>$model</td>
                 </tr>
                 <tr>
-                    <th>Sales or service</th>
+                    <td>Sales or Service:</td>
                     <td>$salesORservice</td>
                 </tr>         
             </table>
@@ -75,16 +112,18 @@ if (isset($_POST['btnSubmitData'])) {
 
         if ($mail->send()) {     
             $_SESSION['form_submitted'] = true;
-            echo("mail send");
+            $_SESSION['success'] = "Mail sent successfully!";
             header("Location: thankyou.php");
             exit();
         } else {
+            $_SESSION['error'] = "Mail not sent!";
             header('Location: index.php');
             exit();
         }
 
     } catch (Exception $e) {
         // $_SESSION['status'] = "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
+        $_SESSION['error'] = "Mail not sent!";
         header('Location: index.php');
         exit();
     }
