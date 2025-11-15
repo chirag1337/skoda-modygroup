@@ -59,26 +59,25 @@ if (isset($_POST['btnSubmitData'])) {
     }
 
     //Create an instance; passing `true` enables exceptions
-    include_once('PHPMailer_5.2.2-beta2/class.phpmailer.php');
     $mail = new PHPMailer(true);
 
     try {
-        //Server settings
-        // $mail->isSMTP();                                            //Send using SMTP
-        // $mail->Host = 'smtp.gmail.com';                       //Set the SMTP server to send through
-        // $mail->SMTPAuth = true;                                   //Enable SMTP authentication
-        // $mail->Username = 'groupmody@gmail.com';            //SMTP username
-        // $mail->Password = 'iqsgsjkbmigmgzlj';                     //SMTP password
-        // $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;         //Enable implicit TLS encryption
-        // $mail->Port = 587;                                    //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
+        // Server settings
+        $mail->isSMTP();                                            //Send using SMTP
+        $mail->Host = 'smtp.gmail.com';                       //Set the SMTP server to send through
+        $mail->SMTPAuth = true;                                   //Enable SMTP authentication
+        $mail->Username = 'chirag@gmail.com';            //SMTP username
+        $mail->Password = '2365jkbmigmgzlj';                     //SMTP password
+        $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;         //Enable implicit TLS encryption
+        $mail->Port = 587;                                    //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
 
         //Recipients
         $mail->setFrom('no_reply@modygroup.co.in');
         // $mail->addAddress('ceo@vw-modyauto.co.in');
         // $mail->addAddress('gmsales@vw-modyauto.co.in');
         $mail->addAddress('chirag@ottoedge.com');
-        $mail->addAddress('gorav@ottoedge.com');
-        $mail->addAddress('hywel@ottoedge.com');
+        // $mail->addAddress('gorav@ottoedge.com');
+        // $mail->addAddress('hywel@ottoedge.com');
       
         //        $mail->addCC('gopalgonda@gmail.com');
 
@@ -103,15 +102,12 @@ if (isset($_POST['btnSubmitData'])) {
                     <td>$city</td>
                 </tr>
                 <tr>
-                    <th>Model </th>
+                    <td>Model: </td>
                     <td>$model</td>
                 </tr>
+
                 <tr>
-                    <td>Location:</td>
-                    <td>$location</td>
-                </tr>
-                <tr>
-                    <th>Sales or service</th>
+                    <td>Sales or Service:</td>
                     <td>$salesORservice</td>
                 </tr>
               
@@ -122,16 +118,18 @@ if (isset($_POST['btnSubmitData'])) {
 
         if ($mail->send()) {     
             $_SESSION['form_submitted'] = true;
+            $_SESSION['success'] = "Mail sent successfully!";
             header("Location: thankyou.php");
-            exit();
         } else {
-            header('Location: index.php');
+            $_SESSION['error'] = "Mail not sent!";
+            header("Location: index.php");
             exit();
         }
 
     } catch (Exception $e) {
         // $_SESSION['status'] = "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
-        header('Location: index.php');
+        $_SESSION['error'] = "Mail not sent! Error: " . $mail->ErrorInfo;
+        header("Location: index.php");
         exit();
     }
 } else {

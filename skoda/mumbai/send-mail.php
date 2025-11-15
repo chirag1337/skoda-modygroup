@@ -63,11 +63,11 @@ if (isset($_POST['btnSubmitData'])) {
                 <td>City:</td><td>$city</td>
                 </tr>
                 <tr>
-                    <th>Model </th>
+                    <td>Model: </td>
                     <td>$model</td>
                 </tr>
                 <tr>
-                    <th>Sales or service</th>
+                    <td>Sales or Service:</td>
                     <td>$salesORservice</td>
                 </tr>         
             </table>
