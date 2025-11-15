@@ -50,10 +50,10 @@ unset($_SESSION['form_submitted']);
 
         gtag('config', 'AW-17492232287');
     </script>
-    <!-- Event snippet for Submit lead form conversion page -->
+    <!-- Event snippet for Submit lead form (1) conversion page -->
     <script>
       gtag('event', 'conversion', {
-          'send_to': 'AW-17492232287/JkxpCK_Iv8AbEN-Q-ZRB',
+          'send_to': 'AW-17732493746/HItKCPz4xMAbELLDwYdC',
           'value': 1.0,
           'currency': 'INR'
       });
