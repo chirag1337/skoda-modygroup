@@ -74,8 +74,8 @@ if (isset($_POST['btnSubmitData'])) {
 
         //Recipients
         $mail->setFrom('groupmody@gmail.com');
-        $mail->addAddress('saleshead@metrohonda.in');
-        $mail->addAddress('ceo@metrohonda.in');
+        // $mail->addAddress('saleshead@metrohonda.in');
+        // $mail->addAddress('ceo@metrohonda.in');
         $mail->addAddress('chirag@ottoedge.com');  
         $mail->addAddress('gorav@ottoedge.com');
         $mail->addAddress('hywel@ottoedge.com');

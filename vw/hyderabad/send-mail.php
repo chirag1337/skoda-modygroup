@@ -74,8 +74,8 @@ if (isset($_POST['btnSubmitData'])) {
 
         //Recipients
         $mail->setFrom('no_reply@modygroup.co.in');
-        $mail->addAddress('ceo@vw-modyauto.co.in');
-        $mail->addAddress('gmsales@vw-modyauto.co.in');
+        // $mail->addAddress('ceo@vw-modyauto.co.in');
+        // $mail->addAddress('gmsales@vw-modyauto.co.in');
         $mail->addAddress('chirag@ottoedge.com');
         $mail->addAddress('gorav@ottoedge.com');
         $mail->addAddress('hywel@ottoedge.com');
