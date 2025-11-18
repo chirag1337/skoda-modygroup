@@ -107,7 +107,7 @@ if (isset($_POST['btnSubmitData'])) {
                     <td>$model</td>
                 </tr>
                 <tr>
-                    <td>Sales or Service:</td>
+                    <td>Sales/Service:</td>
                     <td>$salesORservice</td>
                 </tr>
               
