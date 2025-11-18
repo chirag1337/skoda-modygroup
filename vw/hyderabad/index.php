@@ -20,6 +20,49 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <style>
+        .sales_showroom {
+            font-size: 32px;
+            font-weight: bold;
+        }
+
+        .service_showroom {
+            font-size: 32px;
+            font-weight: bold;
+        }
+
+        .accordion-button::after {
+            display: none !important;
+        }
+
+        @media only screen and (max-width: 600px) {
+            .container {
+                font-size: 16px;
+            }
+
+            .form-control {
+                font-size: 16px;
+            }
+
+            .sales_showroom {
+                font-size: 26px;
+            }
+
+            .service_showroom {
+                font-size: 26px;
+            }
+
+            .btnSubmitData {
+                width: 100%;
+            }
+
+            .logo {
+                width: 150px;
+            }
+        }
+    </style>
 
 </head>
 
@@ -47,12 +90,22 @@
             <div style="display: flex;justify-content: space-between;align-items: center;">
                 <div class="logo">
                     <a href="/" title="Logo">
-                        <img src="assets/images/logo/logo.png" alt="Logo" style="width: 200px">
+                        <img src="assets/images/logo/logo.png" alt="Logo" style="width: 100px">
                     </a>
                 </div>
                 <div class="right">
-                    <a href="tel:9160680000">9160680000</a>
 
+                    <!-- Mobile: Only icon -->
+                    <a href="tel:9160680000" class="d-block d-md-none">
+                        <i class="fa-solid fa-phone text-dark"></i>
+                    </a>
+
+                    <!-- Desktop: Icon + Number -->
+                    <a href="tel:9160680000"
+                        class="d-none d-md-inline-flex align-items-center text-dark text-decoration-none">
+                        <i class="fa-solid fa-phone text-dark" style="margin-right: 5px;"></i>
+                        9160680000
+                    </a>
                     <div class="clear"></div>
                 </div>
             </div>
@@ -63,12 +116,13 @@
         <div class="container" style="margin-top: 20px;">
             <form name="td_form" id="td_form" method="post" action="send-action.php">
                 <div class="row">
-                    <div class="col-md-12">
-                        <h2>Registration Form</h2>
-                        <br>
+                   <div class="col-md-12 mb-3">
+                        <h2 class="h3 h-md-3">Contact Us</h2>
                     </div>
-                    <div class="form-group col-md-12">
-                        <p style="margin-bottom: 0;">Fields marked with an asterisk (<span class="red">*</span>) are mandatory. </p>
+                    <div class="col-md-12">
+                        <p class="text-muted" style="font-size: 14px">
+                            Fields marked with an asterisk (<span class="red">*</span>) are mandatory.
+                        </p>
                     </div>
 
                     <div class="col-md-12">
@@ -131,18 +185,18 @@
                 <div class="row">
                     <div class="col-md-6">
                         <div class="col-md-12">
-                            <h2 class="border_head sales_showroom">Sales Showroom</h2>
+                            <p class="border_head sales_showroom">Sales Showroom</p>
                         </div>
                         <div class="accordion" id="accordionExample">
                             <div class="accordion-item">
                                 <h2 class="accordion-header" id="headingThree">
-                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                        data-bs-target="#collapseThree" aria-expanded="false"
+                                    <button class="accordion-button collapsed" type="button"
+                                        data-bs-target="#collapseThree" aria-expanded="true"
                                         aria-controls="collapseThree">
                                         Deccan
                                     </button>
                                 </h2>
-                                <div id="collapseThree" class="accordion-collapse collapse"
+                                <div id="collapseThree" class="accordion-collapse show"
                                     aria-labelledby="headingThree" data-bs-parent="#accordionExample">
                                     <div class="accordion-body">
                                         <ul>
@@ -156,12 +210,12 @@
                             </div>
                             <div class="accordion-item">
                                 <h2 class="accordion-header" id="headingTwo">
-                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                        data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                    <button class="accordion-button collapsed" type="button"
+                                        data-bs-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
                                         Mehdipatnam
                                     </button>
                                 </h2>
-                                <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
+                                <div id="collapseTwo" class="accordion-collapse show" aria-labelledby="headingTwo"
                                     data-bs-parent="#accordionExample">
                                     <div class="accordion-body">
                                         <ul>
@@ -175,12 +229,12 @@
                             </div>
                             <div class="accordion-item">
                                 <h2 class="accordion-header" id="headingFour">
-                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                        data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                                    <button class="accordion-button collapsed" type="button"
+                                        data-bs-target="#collapseFour" aria-expanded="true" aria-controls="collapseFour">
                                         Visakhapatnam
                                     </button>
                                 </h2>
-                                <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour"
+                                <div id="collapseFour" class="accordion-collapse show" aria-labelledby="headingFour"
                                     data-bs-parent="#accordionExample">
                                     <div class="accordion-body">
                                         <ul>
@@ -194,12 +248,12 @@
                             </div>
                             <div class="accordion-item">
                                 <h2 class="accordion-header" id="headingFive">
-                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                        data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                                    <button class="accordion-button collapsed" type="button"
+                                        data-bs-target="#collapseFive" aria-expanded="true" aria-controls="collapseFive">
                                         Rajahmundry
                                     </button>
                                 </h2>
-                                <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive"
+                                <div id="collapseFive" class="accordion-collapse show" aria-labelledby="headingFive"
                                     data-bs-parent="#accordionExample">
                                     <div class="accordion-body">
                                         <ul>
@@ -215,18 +269,18 @@
                     </div>
                     <div class="col-md-6">
                         <div class="col-md-12">
-                            <h2 class="border_head sales_showroom">Service Center</h2>
+                            <p class="border_head sales_showroom">Service Center</p>
                         </div>
                         <div class="accordion" id="accordionExample">
                             <div class="accordion-item">
                                 <h2 class="accordion-header" id="headingUppal">
-                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                        data-bs-target="#collapseUppal" aria-expanded="false"
+                                    <button class="accordion-button collapsed" type="button"
+                                        data-bs-target="#collapseUppal" aria-expanded="true"
                                         aria-controls="collapseUppal">
                                         Mehdipatnam 
                                     </button>
                                 </h2>
-                                <div id="collapseUppal" class="accordion-collapse collapse"
+                                <div id="collapseUppal" class="accordion-collapse show"
                                     aria-labelledby="headingUppal" data-bs-parent="#accordionExample">
                                     <div class="accordion-body">
                                         <ul>
@@ -242,13 +296,13 @@
                         <div class="accordion" id="accordionExample">
                             <div class="accordion-item">
                                 <h2 class="accordion-header" id="headingOne">
-                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                        data-bs-target="#collapseOne" aria-expanded="false"
+                                    <button class="accordion-button collapsed" type="button"
+                                        data-bs-target="#collapseOne" aria-expanded="true"
                                         aria-controls="collapseOne">
                                         Deccan  
                                     </button>
                                 </h2>
-                                <div id="collapseOne" class="accordion-collapse collapse"
+                                <div id="collapseOne" class="accordion-collapse show"
                                     aria-labelledby="headingOne" data-bs-parent="#accordionExample">
                                     <div class="accordion-body">
                                         <ul>
@@ -264,13 +318,13 @@
                         <div class="accordion" id="accordionExample">
                             <div class="accordion-item">
                                 <h2 class="accordion-header" id="headingSix">
-                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                        data-bs-target="#collapseSix" aria-expanded="false"
+                                    <button class="accordion-button collapsed" type="button"
+                                        data-bs-target="#collapseSix" aria-expanded="true"
                                         aria-controls="collapseSix">
                                         Visakhapatnam   
                                     </button>
                                 </h2>
-                                <div id="collapseSix" class="accordion-collapse collapse"
+                                <div id="collapseSix" class="accordion-collapse show"
                                     aria-labelledby="headingSix" data-bs-parent="#accordionExample">
                                     <div class="accordion-body">
                                         <ul>
@@ -286,13 +340,13 @@
                         <div class="accordion" id="accordionExample">
                             <div class="accordion-item">
                                 <h2 class="accordion-header" id="headingSeven">
-                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                        data-bs-target="#collapseSeven" aria-expanded="false"
+                                    <button class="accordion-button collapsed" type="button"
+                                        data-bs-target="#collapseSeven" aria-expanded="true"
                                         aria-controls="collapseSeven">
                                         Rajahmundry    
                                     </button>
                                 </h2>
-                                <div id="collapseSeven" class="accordion-collapse collapse"
+                                <div id="collapseSeven" class="accordion-collapse show"
                                     aria-labelledby="headingSeven" data-bs-parent="#accordionExample">
                                     <div class="accordion-body">
                                         <ul>
@@ -410,6 +464,7 @@
                     $(element).removeClass("is-invalid");
                 },
                 submitHandler: function (form) {
+                    $("#btnSubmitData").prop("disabled", true); 
                     $("#btnSubmitData").val("Submitting...");
                     form.submit();
                 }

@@ -75,7 +75,7 @@ if (isset($_POST['btnSubmitData'])) {
         $mail->setFrom('byd_mails@modygroup.co.in');
         $mail->addAddress('ceo@mody-byd.in');
         $mail->addAddress('saleshead@mody-byd.in');
-        $mail->addAddress('chirag@ottoedge.com'); 
+        // $mail->addAddress('chirag@ottoedge.com'); 
         $mail->addAddress('hywel@ottoedge.com');
         // $mail->addAddress('chirag@ottoedge.com');
       

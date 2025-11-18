@@ -8,6 +8,9 @@
     <title>Skoda Hyderabad</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="assets/css/style.css?v=2.0">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
@@ -20,6 +23,47 @@
 
         gtag('config', 'AW-17516541989');
     </script>
+    <style>
+        .sales_showroom {
+            font-size: 32px;
+            font-weight: bold;
+        }
+
+        .service_showroom {
+            font-size: 32px;
+            font-weight: bold;
+        }
+
+        .accordion-button::after {
+            display: none !important;
+        }
+
+        @media only screen and (max-width: 600px) {
+            .container {
+                font-size: 16px;
+            }
+
+            .form-control {
+                font-size: 16px;
+            }
+
+            .sales_showroom {
+                font-size: 26px;
+            }
+
+            .service_showroom {
+                font-size: 26px;
+            }
+
+            .btnSubmitData {
+                width: 100%;
+            }
+
+            .logo {
+                width: 150px;
+            }
+        }
+    </style>
 </head>
 
 <body>
@@ -50,10 +94,22 @@
                     </a>
                 </div>
                 <div class="right">
-                    <a href="tel:7799250000">7799250000</a>
+
+                    <!-- Mobile: Only icon -->
+                    <a href="tel:7799250000" class="d-block d-md-none">
+                        <i class="fa-solid fa-phone text-dark"></i>
+                    </a>
+
+                    <!-- Desktop: Icon + Number -->
+                    <a href="tel:7799250000"
+                        class="d-none d-md-inline-flex align-items-center text-dark text-decoration-none">
+                        <i class="fa-solid fa-phone text-dark" style="margin-right: 5px;"></i>
+                        7799250000
+                    </a>
 
                     <div class="clear"></div>
                 </div>
+
             </div>
             <div class="clear"></div>
         </div>
@@ -62,12 +118,13 @@
         <div class="container" style="margin-top: 20px;">
             <form name="td_form" id="td_form" method="post" action="send-action.php">
                 <div class="row">
-                    <div class="col-md-12">
-                        <h2>Registration Form</h2>
-                        <br>
+                    <div class="col-md-12 mb-3">
+                        <h2 class="h3 h-md-3">Contact Us</h2>
                     </div>
-                    <div class="form-group col-md-12">
-                        <p style="margin-bottom: 0;">Fields marked with an asterisk (<span class="red">*</span>) are mandatory. </p>
+                    <div class="col-md-12">
+                        <p class="text-muted" style="font-size: 14px">
+                            Fields marked with an asterisk (<span class="red">*</span>) are mandatory.
+                        </p>
                     </div>
 
                     <div class="col-md-12">
@@ -91,7 +148,7 @@
                                 <input type="text" class="form-control" name="email" id="email" aria-describedby="emailHelp" placeholder="Enter email">
                             </div>
                             <div class="form-group col-md-6">
-                                <label for="model">Model</label>
+                                <label for="model">Model <span class="red">*</span></label>
                                 <select class="form-control" name="model" id="model">
                                     <option value="-1">-- Select Model --</option>
                                     <option value="Slavia">Slavia</option>
@@ -133,117 +190,108 @@
                 <div class="row">
                     <div class="col-md-6">
                         <div class="col-md-12">
-                            <h2 class="border_head sales_showroom">Sales Showroom</h2>
+                            <p class="border_head sales_showroom">Sales Showroom</p>
                         </div>
-                        <div class="accordion" id="accordionExample">
+
+                        <div class="accordion">
+
+                            <!-- Andheri -->
                             <div class="accordion-item">
-                                <h2 class="accordion-header" id="headingThree">
-                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                        data-bs-target="#collapseThree" aria-expanded="false"
-                                        aria-controls="collapseThree">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button not-collapsible">
                                         LB Nagar
                                     </button>
                                 </h2>
-                                <div id="collapseThree" class="accordion-collapse collapse"
-                                    aria-labelledby="headingThree" data-bs-parent="#accordionExample">
-                                    <div class="accordion-body">
-                                        <ul>
-                                            <li>
-                                                <img src="assets/images/location.png">
-                                                No.3-12-59, Vasant Arcade , Balaji Nagar, X Road, Mansoorabad, LB Nagar
+                                <div class="accordion-body show">
+                                    <ul>
+                                        <li>
+                                            <img src="assets/images/location.png">
+                                            No.3-12-59, Vasant Arcade , Balaji Nagar, X Road, Mansoorabad, LB Nagar
                                                 Telangana 500074
-                                            </li>
-                                        </ul>
-                                    </div>
+                                        </li>
+                                    </ul>
                                 </div>
                             </div>
+
+                            <!-- Worli -->
                             <div class="accordion-item">
-                                <h2 class="accordion-header" id="headingTwo">
-                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                        data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button not-collapsible">
                                         Attapur
                                     </button>
                                 </h2>
-                                <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
-                                    data-bs-parent="#accordionExample">
-                                    <div class="accordion-body">
-                                        <ul>
-                                            <li>
-                                                <img src="assets/images/location.png">
-                                                No. 28/A, 32, 33 & 34, Upperpally Inner Ring Road, Opp Pillar No. 190,
+                                <div class="accordion-body show">
+                                    <ul>
+                                        <li>
+                                            <img src="assets/images/location.png">
+                                            No. 28/A, 32, 33 & 34, Upperpally Inner Ring Road, Opp Pillar No. 190,
                                                 Attapur, Rajendranagar, Hyderabad
-                                            </li>
-                                        </ul>
-                                    </div>
+                                        </li>
+                                    </ul>
                                 </div>
                             </div>
+
+                            <!-- Chembur -->
                             <div class="accordion-item">
-                                <h2 class="accordion-header" id="headingSix">
-                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                        data-bs-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button not-collapsible">
                                         Karimnagar
                                     </button>
                                 </h2>
-                                <div id="collapseSix" class="accordion-collapse collapse" aria-labelledby="headingSix"
-                                    data-bs-parent="#accordionExample">
-                                    <div class="accordion-body">
-                                        <ul>
-                                            <li>
-                                                <img src="assets/images/location.png">
-                                                No 8, 5/446/B, Hyderabad Rd, Kothirampur, Karimnagar, Telangana 505001
-                                            </li>
-                                        </ul>
-                                    </div>
+                                <div class="accordion-body show">
+                                    <ul>
+                                        <li>
+                                            <img src="assets/images/location.png">
+                                            No 8, 5/446/B, Hyderabad Rd, Kothirampur, Karimnagar, Telangana 505001
+
+                                        </li>
+                                    </ul>
                                 </div>
                             </div>
+
                         </div>
                     </div>
+
                     <div class="col-md-6">
                         <div class="col-md-12">
-                            <h2 class="border_head sales_showroom">Service Center</h2>
+                            <p class="border_head sales_showroom">Service Center</p>
                         </div>
-                        <div class="accordion" id="accordionExample">
+
+                        <div class="accordion">
+
+                            <!-- Mahalaxmi -->
                             <div class="accordion-item">
-                                <h2 class="accordion-header" id="headingUppal">
-                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                        data-bs-target="#collapseUppal" aria-expanded="false"
-                                        aria-controls="collapseUppal">
-                                        Uppal
-                                    </button>
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button not-collapsible">Uppal</button>
                                 </h2>
-                                <div id="collapseUppal" class="accordion-collapse collapse"
-                                    aria-labelledby="headingUppal" data-bs-parent="#accordionExample">
-                                    <div class="accordion-body">
-                                        <ul>
-                                            <li>
-                                                <img src="assets/images/location.png" alt="Location">
-                                                Khalsa Village, Survey No 584, Adivireddy Estate, Industrial Area,
+                                <div class="accordion-body show">
+                                    <ul>
+                                        <li>
+                                            <img src="assets/images/location.png">
+                                            Khalsa Village, Survey No 584, Adivireddy Estate, Industrial Area,
                                                 Uppal, Hyderabad, Telangana 500039
-                                            </li>
-                                        </ul>
-                                    </div>
+
+                                        </li>
+                                    </ul>
                                 </div>
                             </div>
+
+                            <!-- Kurla -->
                             <div class="accordion-item">
-                                <h2 class="accordion-header" id="headingKarimnagar">
-                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                        data-bs-target="#collapseKarimnagar" aria-expanded="false"
-                                        aria-controls="collapseKarimnagar">
-                                        Karimnagar
-                                    </button>
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button not-collapsible">Karimnagar</button>
                                 </h2>
-                                <div id="collapseKarimnagar" class="accordion-collapse collapse"
-                                    aria-labelledby="headingKarimnagar" data-bs-parent="#accordionExample">
-                                    <div class="accordion-body">
-                                        <ul>
-                                            <li>
-                                                <img src="assets/images/location.png" alt="Location">
-                                                No 8, 5/446/B, Hyderabad Rd, Kothirampur, Karimnagar, Telangana 505001
-                                            </li>
-                                        </ul>
-                                    </div>
+                                <div class="accordion-body show">
+                                    <ul>
+                                        <li>
+                                            <img src="assets/images/location.png">
+                                             No 8, 5/446/B, Hyderabad Rd, Kothirampur, Karimnagar, Telangana 505001
+
+                                        </li>
+                                    </ul>
                                 </div>
                             </div>
+
                         </div>
                     </div>
                 </div>
@@ -350,6 +398,7 @@
                     $(element).removeClass("is-invalid");
                 },
                 submitHandler: function (form) {
+                    $("#btnSubmitData").prop("disabled", true); 
                     $("#btnSubmitData").val("Submitting...");
                     form.submit();
                 }

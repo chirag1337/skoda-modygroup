@@ -19,6 +19,7 @@ unset($_SESSION['form_submitted']);
     <title>Skoda Mumbai</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="assets/css/style.css?v=2.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <style>
         html, body {
             height: 100%;
@@ -40,6 +41,16 @@ unset($_SESSION['form_submitted']);
 
         .btn-success{
             background-color: #4ba82e;
+            border: none;
+        }
+        .btn-success:hover{
+            background-color: #4ba82e;
+            text-decoration: none !important;
+        }
+        @media only screen and (max-width: 600px) {
+            .logo {
+                width: 150px;
+            }
         }
     </style>
     <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17492232287"></script>
@@ -66,11 +77,22 @@ unset($_SESSION['form_submitted']);
             <div style="display: flex; justify-content: space-between; align-items: center;">
                 <div class="logo">
                     <a href="/" title="Logo">
-                        <img src="assets/images/logo/logo.png" alt="Logo" style="width: 200px">
+                        <img src="assets/images/logo/logo.png" alt="Logo" style="width: 180px">
                     </a>
                 </div>
                 <div class="right">
-                    <a href="tel:7799250000">7799250000</a>
+
+                    <!-- Mobile: Only icon -->
+                    <a href="tel:7799250000" class="d-block d-md-none">
+                        <i class="fa-solid fa-phone text-dark"></i>
+                    </a>
+
+                    <!-- Desktop: Icon + Number -->
+                    <a href="tel:7799250000" class="d-none d-md-inline-flex align-items-center text-dark text-decoration-none">
+                        <i class="fa-solid fa-phone text-dark" style="margin-right: 5px;"></i>
+                        7799250000
+                    </a>
+
                     <div class="clear"></div>
                 </div>
             </div>
@@ -81,7 +103,7 @@ unset($_SESSION['form_submitted']);
         <div class="container">
             <div class="thank-you-message">
                 <h2>Thank You!</h2>
-                <p>Thanks a bunch for filling that out. It means a lot to us, just like you do! We really appreciate you giving us a moment of your time today. Thanks for being you.</p>
+                <p style="font-size:16px">Thanks a bunch for filling that out. It means a lot to us, just like you do! We really appreciate you giving us a moment of your time today. Thanks for being you.</p>
                 <a href="/index.php" class="btn btn-success">Return to Home</a>
                 <!-- <img src="assets/images/skoda_thankyou.jpg" alt="skoda-thankyou"> -->
             </div>
