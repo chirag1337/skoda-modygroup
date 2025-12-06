@@ -4,12 +4,10 @@ session_start();
 ini_set('display_errors', 1);
 error_reporting(E_ALL);
 
+require __DIR__ . '/../../../vendor/autoload.php'; 
+
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
-
-require 'PHPMailer/src/Exception.php';
-require 'PHPMailer/src/PHPMailer.php';
-require 'PHPMailer/src/SMTP.php';
 
 if (isset($_POST['btnSubmitData'])) {
 
@@ -73,11 +71,12 @@ if (isset($_POST['btnSubmitData'])) {
 
         //Recipients
         $mail->setFrom('no_reply@modygroup.co.in');
-        $mail->addAddress('ceo@vw-modyauto.co.in');
+        $mail->addAddress('ajay@ottoedge.com');
+        /*$mail->addAddress('ceo@vw-modyauto.co.in');
         $mail->addAddress('gmsales@vw-modyauto.co.in');
         // $mail->addAddress('chirag@ottoedge.com');
         $mail->addAddress('gorav@ottoedge.com');
-        $mail->addAddress('hywel@ottoedge.com');
+        $mail->addAddress('hywel@ottoedge.com');*/
       
         //        $mail->addCC('gopalgonda@gmail.com');
 

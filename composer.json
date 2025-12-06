@@ -1,0 +1,17 @@
+{
+    "name": "modygroup/ottoedge",
+    "require": {
+        "phpmailer/phpmailer": "^7.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Modygroup\\Ottoedge\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "AjayKushwaha25",
+            "email": "ajay@ottoedge.com"
+        }
+    ]
+}
