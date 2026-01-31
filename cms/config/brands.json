@@ -1,7 +1,27 @@
 {
+  "byd": {
+    "label": "BYD",
+    "table": "byd",
+    "locations": ["hyderabad", "mumbai"]
+  },
+  "honda": {
+    "label": "Honda",
+    "table": "honda",
+    "locations": ["hyderabad"]
+  },
+  "skoda": {
+    "label": "Skoda",
+    "table": "skoda",
+    "locations": ["hyderabad", "mumbai"]
+  },
   "toyota": {
     "label": "Toyota",
     "table": "toyota",
     "locations": ["hyderabad"]
+  },
+  "vw": {
+    "label": "VW",
+    "table": "vw",
+    "locations": ["hyderabad", "mumbai"]
   }
 }
