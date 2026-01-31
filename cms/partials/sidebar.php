@@ -21,6 +21,14 @@ $currentPage = basename($_SERVER['PHP_SELF']);
             </a>
         </li>
 
+        <li class="nav-item">
+            <a class="nav-link <?= ($currentPage === 'leads.php') ? 'active' : '' ?>"
+               href="leads.php">
+                <i class="bi bi-card-list"></i>
+                <span class="menu-text">Leads</span>
+            </a>
+        </li>
+
     </ul>
 </div>
 
