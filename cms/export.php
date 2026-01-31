@@ -31,8 +31,8 @@ $brands = json_decode(file_get_contents("config/brands.json"), true);
 				    <div class="col-md-3">
 				        <label class="form-label">City</label>
 				        <select id="city" class="form-select">
-				            <option value="">Select City</option>
-				        </select>
+						    <option value="all">All Cities</option>
+						</select>
 				    </div>
 
 				    <div class="col-md-2">
@@ -57,43 +57,42 @@ $brands = json_decode(file_get_contents("config/brands.json"), true);
 
 	</div>
 
-<script>
-	const brands = <?= json_encode($brands); ?>;
+	<script>
+		const brands = <?= json_encode($brands); ?>;
 
-	$("#brand").on("change", function () {
-	    const brandKey = $(this).val();
-	    let options = '<option value="">Select City</option>';
+		$("#brand").on("change", function () {
+		    const brandKey = $(this).val();
+		    let options = '<option value="all">All Cities</option>';
 
-	    if (brands[brandKey]) {
-	        brands[brandKey].locations.forEach(loc => {
-	            options += `<option value="${loc}">${loc}</option>`;
-	        });
-	    }
+		    if (brands[brandKey]) {
+		        brands[brandKey].locations.forEach(city => {
+		            options += `<option value="${city}">${city}</option>`;
+		        });
+		    }
 
-	    $("#city").html(options);
-	});
+		    $("#city").html(options);
+		});
 
-	$("#downloadBtn").on("click", function () {
-	    const brand = $("#brand").val();
-	    const city = $("#city").val();
-	    const start = $("#start_date").val();
-	    const end = $("#end_date").val();
+		$("#downloadBtn").on("click", function () {
+		    const brand = $("#brand").val();
+		    const city = $("#city").val();
+		    const start = $("#start_date").val();
+		    const end = $("#end_date").val();
 
-	    if (!brand || !city) {
-	        alert("Please select brand and city");
-	        return;
-	    }
+		    if (!brand) {
+		        alert("Please select brand");
+		        return;
+		    }
 
-	    const url = "ajax/export_leads.php?" + $.param({
-	        brand: brand,
-	        city: city,
-	        start: start,
-	        end: end
-	    });
-
-	    window.location.href = url;
-	});
-</script>
-
+		    window.location =
+		        "ajax/export_leads.php?" +
+		        $.param({
+		            brand: brand,
+		            city: city,
+		            start: start,
+		            end: end
+		        });
+		});
+	</script>
 
 <?php include "partials/footer.php"; ?>
