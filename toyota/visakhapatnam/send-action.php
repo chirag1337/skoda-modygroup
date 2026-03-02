@@ -1,7 +1,7 @@
 <?php
 session_start();
 $connection = mysqli_connect("34.28.236.146:3306", "skoda-ottomac", "skod@Ottomac", "modygroup_leads");
-// $connection = mysqli_connect("localhost", "root", "", "modygroup_leads");
+// $connection = mysqli_connect("localhost", "root", "ottoedge@321", "modygroup_leads");
 
 if (isset($_POST['btnSubmitData'])) {
     $name = $_POST['name'];
@@ -10,7 +10,7 @@ if (isset($_POST['btnSubmitData'])) {
     $location = $_POST['location'];
     $model = $_POST['model'];
     $salesORservice = $_POST['salesORservice'];
-    $city = 'Mumbai';
+     $city = 'Hyderabad';
 
     if (empty($name) || strlen($name) < 2) {
         echo json_encode(['status' => 400, 'message' => 'Please enter a valid name']);
@@ -34,8 +34,22 @@ if (isset($_POST['btnSubmitData'])) {
     }
 
     $validLocations = [
-        "Sales" => ["Mumbai North", "Vasai","Kalyan","Thane","Panjim","Goa", "Mumbai", "Navi Mumbai"],
-        "Service" => ["Mumbai North","Thane","Goa"]
+        "Sales" => [
+            "Vishakapatnam",
+            "Gajuwaka",
+            "Anakapalle",
+            "Yelamanchili",
+            "Srikakulam",
+            "Vizianagaram"
+        ],
+        "Service" => [
+            "Vishakapatnam",
+            "Gajuwaka",
+            "Anakapalle",
+            "Yelamanchili",
+            "Srikakulam",
+            "Vizianagaram"
+        ],
     ];
 
     if (!isset($validLocations[$salesORservice]) || !in_array($location, $validLocations[$salesORservice])) {
@@ -43,13 +57,25 @@ if (isset($_POST['btnSubmitData'])) {
         exit;
     }
 
-    $validModel = ["VIRTUS", "TAIGUN", "GOLF GTI", "TIGUAN R-LINE"];
+    $validModel = [
+        "Glanza",
+        "Urban Cruiser Taisor",
+        "Rumion",
+        "Urban Cruiser Hyryder",
+        "Innova Crysta",
+        "Innova Hycross",
+        "Hilux",
+        "Fortuner",
+        "Legender",
+        "Camry",
+        "Vellfire"
+    ];
     if (!in_array($model, $validModel)) {
         echo json_encode(['status' => 400, 'message' => 'Invalid model selected']);
         exit;
     }
 
-    $query = "INSERT INTO vw (name, mobile, email,city, location, model, salesORservice) VALUES ('$name', '$mobile', '$email','$city', '$location', '$model', '$salesORservice')";
+    $query = "INSERT INTO toyota_vishakapatnam (name, mobile, email,city, location, model, salesORservice) VALUES ('$name', '$mobile', '$email','$city', '$location', '$model', '$salesORservice')";
     $query_run = mysqli_query($connection, $query);
 
 

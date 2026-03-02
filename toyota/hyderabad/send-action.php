@@ -40,13 +40,7 @@ if (isset($_POST['btnSubmitData'])) {
             "Uppal",
             "Sangareddy",
             "Kama Reddy",
-            "Jangaon",
-            "Vishakapatnam",
-            "Gajuwaka",
-            "Anakapalle",
-            "Yelamanchili",
-            "Srikakulam",
-            "Vizianagaram"
+            "Jangaon", "Hyderabad", "Secunderabad"
         ],
         "Service" => [
             "Karkhana",
@@ -54,13 +48,7 @@ if (isset($_POST['btnSubmitData'])) {
             "Uppal",
             "Sangareddy",
             "Kama Reddy",
-            "Jangaon",
-            "Vishakapatnam",
-            "Gajuwaka",
-            "Anakapalle",
-            "Yelamanchili",
-            "Srikakulam",
-            "Vizianagaram"
+            "Jangaon"
         ],
     ];
 

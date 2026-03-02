@@ -261,9 +261,9 @@
             locationSelect.innerHTML = '<option value="-1">-- Select Location --</option>';
             var options = [];
             if (salesOrService === "Sales") {
-                options = ["Karkhana","Bowenpally","Uppal","Sangareddy","Kama Reddy","Jangaon","Vishakapatnam","Gajuwaka","Anakapalle","Yelamanchili","Srikakulam","Vizianagaram"];
+                options = ["Karkhana","Bowenpally","Uppal","Sangareddy","Kama Reddy","Jangaon", "Hyderabad", "Secunderabad"];
             } else if (salesOrService === "Service") {
-                options = ["Karkhana","Bowenpally","Uppal","Sangareddy","Kama Reddy","Jangaon","Vishakapatnam","Gajuwaka","Anakapalle","Yelamanchili","Srikakulam","Vizianagaram"];
+                options = ["Karkhana","Bowenpally","Uppal","Sangareddy","Kama Reddy","Jangaon"];
             }
             // Add new options
             options.forEach(function (loc) {

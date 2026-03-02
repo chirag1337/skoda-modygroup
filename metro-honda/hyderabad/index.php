@@ -253,7 +253,7 @@
             locationSelect.innerHTML = '<option value="-1">-- Select Location --</option>';
             var options = [];
             if (salesOrService === "Sales") {
-                options = ["Bowenpally"];
+                options = ["Bowenpally", "Hyderabad", "Secunderabad"];
             } else if (salesOrService === "Service") {
                 options = ["Bowenpally"];
             }

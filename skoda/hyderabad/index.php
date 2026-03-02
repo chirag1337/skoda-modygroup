@@ -319,7 +319,7 @@
             locationSelect.innerHTML = '<option value="-1">-- Select Location --</option>';
             var options = [];
             if (salesOrService === "Sales") {
-                options = ["Attapur", "LB Nagar", "Karimnagar"];
+                options = ["Attapur", "LB Nagar", "Karimnagar", "Hyderabad", "Secunderabad"];
             } else if (salesOrService === "Service") {
                 options = ["Uppal", "Karimnagar"];
             }

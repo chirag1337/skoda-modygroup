@@ -398,7 +398,7 @@
             locationSelect.innerHTML = '<option value="-1">-- Select Location --</option>';
             var options = [];
             if (salesOrService === "Sales") {
-                options = ["Mumbai North", "Vasai","Kalyan","Thane","Panjim","Goa"];
+                options = ["Mumbai North", "Vasai","Kalyan","Thane","Panjim","Goa", "Mumbai", "Navi Mumbai"];
             } else if (salesOrService === "Service") {
                 options = ["Mumbai North","Thane","Goa"];
             }

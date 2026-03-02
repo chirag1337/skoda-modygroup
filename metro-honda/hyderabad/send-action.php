@@ -34,7 +34,7 @@ if (isset($_POST['btnSubmitData'])) {
     }
 
     $validLocations = [
-        "Sales" => ["Bowenpally"],
+        "Sales" => ["Bowenpally", "Hyderabad", "Secunderabad"],
         "Service" => ["Bowenpally"]
     ];
 

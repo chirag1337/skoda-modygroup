@@ -1,0 +1,112 @@
+
+<?php
+session_start();
+
+if (!isset($_SESSION['form_submitted']) || $_SESSION['form_submitted'] !== true) {
+    header("Location: index.php");
+    exit();
+}
+
+unset($_SESSION['form_submitted']);
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-NNVCCWPT');</script>
+    <!-- End Google Tag Manager -->
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Honda Hyderabad</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css?v=2.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+        }
+        body {
+            display: flex;
+            flex-direction: column;
+        }
+        main {
+            flex: 1 0 auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .thank-you-message {
+            text-align: center;
+        }
+
+        .btn-success{
+            background-color: #ec1c2f;
+            border: none;
+        }
+        .btn-success:hover{
+            background-color: #ec1c2f;
+            text-decoration: none !important;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NNVCCWPT"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+    <header>
+        <div class="container">
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+                <div class="logo">
+                    <a href="/" title="Logo">
+                        <img src="assets/images/logo/logo.png" alt="Logo" style="width: 180px">
+                    </a>
+                </div>
+                <div class="right">
+
+                    <!-- Mobile: Only icon -->
+                    <a href="tel:9581456717" class="d-block d-md-none">
+                        <i class="fa-solid fa-phone text-dark"></i>
+                    </a>
+
+                    <!-- Desktop: Icon + Number -->
+                    <a href="tel:9581456717"
+                        class="d-none d-md-inline-flex align-items-center text-dark text-decoration-none">
+                        <i class="fa-solid fa-phone text-dark" style="margin-right: 5px;"></i>
+                        9581456717
+                    </a>
+                    <div class="clear"></div>
+                </div>
+            </div>
+            <div class="clear"></div>
+        </div>
+    </header>
+    <main>
+        <div class="container">
+            <div class="thank-you-message">
+                <h2>Thank You!</h2>
+                <p style="font-size:16px">Thanks a bunch for filling that out. It means a lot to us, just like you do! We really appreciate you giving us a moment of your time today. Thanks for being you.</p>
+                <a href="/index.php" class="btn btn-success">Return to Home</a>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <div class="container">
+            <p>&copy; <?php echo date("Y"); ?> <a href="https://modygroup.co.in/" target="_blank">Mody Group</a></p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+</body>
+
+</html>

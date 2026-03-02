@@ -346,7 +346,7 @@
             locationSelect.innerHTML = '<option value="-1">-- Select Location --</option>';
             var options = [];
             if (salesOrService === "Sales") {
-                options = ["Begumpet", "Banjara Hills"];
+                options = ["Begumpet", "Banjara Hills", "Hyderabad", "Secunderabad"];
             } else if (salesOrService === "Service") {
                 options = ["Nagole"];
             }

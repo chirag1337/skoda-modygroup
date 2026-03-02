@@ -384,7 +384,7 @@
             locationSelect.innerHTML = '<option value="-1">-- Select Location --</option>';
             var options = [];
             if (salesOrService === "Sales") {
-                options = ["Deccan", "Mehdipatnam","Visakhapatnam","Rajahmundry"];
+                options = ["Deccan", "Mehdipatnam","Visakhapatnam","Rajahmundry", "Hyderabad", "Secunderabad"];
             } else if (salesOrService === "Service") {
                 options = ["Mehdipatnam","Deccan","Visakhapatnam","Rajahmundry "];
             }

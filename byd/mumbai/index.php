@@ -280,7 +280,7 @@
             locationSelect.innerHTML = '<option value="-1">-- Select Location --</option>';
             var options = [];
             if (salesOrService === "Sales") {
-                options = ["Navi Mumbai", "Thane"];
+                options = ["Navi Mumbai", "Thane", "Mumbai"];
             } else if (salesOrService === "Service") {
                 options = ["Thane"];
             }

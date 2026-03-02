@@ -17,7 +17,7 @@
   "toyota": {
     "label": "Toyota",
     "table": "toyota",
-    "locations": ["hyderabad"]
+    "locations": ["hyderabad", "visahapatnam"]
   },
   "vw": {
     "label": "VW",
