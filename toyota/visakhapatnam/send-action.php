@@ -75,7 +75,7 @@ if (isset($_POST['btnSubmitData'])) {
         exit;
     }
 
-    $query = "INSERT INTO toyota_vishakapatnam (name, mobile, email,city, location, model, salesORservice) VALUES ('$name', '$mobile', '$email','$city', '$location', '$model', '$salesORservice')";
+    $query = "INSERT INTO toyota (name, mobile, email,city, location, model, salesORservice) VALUES ('$name', '$mobile', '$email','$city', '$location', '$model', '$salesORservice')";
     $query_run = mysqli_query($connection, $query);
 
 
