@@ -10,7 +10,7 @@ if (isset($_POST['btnSubmitData'])) {
     $location = $_POST['location'];
     $model = $_POST['model'];
     $salesORservice = $_POST['salesORservice'];
-     $city = 'Hyderabad';
+     $city = 'Vishakapatnam';
 
     if (empty($name) || strlen($name) < 2) {
         echo json_encode(['status' => 400, 'message' => 'Please enter a valid name']);
