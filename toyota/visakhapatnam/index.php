@@ -170,6 +170,26 @@
         </div>
     </header>
     <main>
+        <div id="homeSlider" class="carousel slide carousel-fade" data-bs-ride="carousel">
+            <!-- <div class="carousel-indicators">
+                <button type="button" data-bs-target="#homeSlider" data-bs-slide-to="0" class="active" aria-current="true"
+                    aria-label="Slide 1"></button>
+            </div> -->
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <!-- <img src="assets/images/desktop-banner.jpg" class="d-block w-100" alt="Banner"> -->
+                    <img data-desktop-src="assets/images/desktop-banner.jpg" data-mobile-src="assets/images/mobile-banner.jpg" class="d-block w-100" alt="Banner">
+                </div>
+            </div>
+            <!-- <button class="carousel-control-prev" type="button" data-bs-target="#homeSlider" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#homeSlider" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button> -->
+        </div>
         <div class="container" style="margin-top: 20px;">
             <form name="td_form" id="td_form" method="post" action="send-action.php">
                 <div class="row">
@@ -487,6 +507,34 @@
     <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.5/dist/jquery.validate.min.js"></script>
 
     <script>
+
+
+        function winresize() {
+            var desktop = ($(window).width() > 767) ? true : false;
+            
+            $('[data-mobile-src]').each(function () {
+                src = "";
+                if (desktop && $(this).data('desktop-src')) {
+                    src = $(this).data('desktop-src')
+                } else {
+                    src = $(this).data('mobile-src');
+                }
+
+                $(this).attr('src', src);
+            });
+        } 
+
+
+        $(window).resize(function () {
+            winresize();
+        });
+
+        winresize();
+
+
+        $(document).ready(function (event) { 
+            winresize();
+        });
 
         function updateLocations() {
             var salesOrService = document.getElementById("salesORservice").value;
