@@ -62,6 +62,60 @@
             }
         }
     </style>
+
+    <style>
+        .custom-footer-bg {
+            background-color: #383838; /* Matches the dark grey from the image */
+            color: #f8f9fa;
+        }
+        .footer-list-item {
+            color: #d1d1d1;
+            font-size: 0.85rem;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            margin-bottom: 0.75rem;
+        }
+        .footer-heading {
+            color: #ffffff;
+            font-size: 0.95rem;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            margin-bottom: 1.5rem;
+        }
+        .address-box {
+            background-color: #2b2b2b; /* Slightly darker background for the address section */
+            border-radius: 4px;
+            position: relative;
+        }
+        .address-text {
+            font-size: 0.85rem;
+            line-height: 1.5;
+            color: #d1d1d1;
+        }
+        .nav-arrows {
+            cursor: pointer;
+            width: 24px;
+            height: 24px;
+            border: 1px solid #fff;
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.75rem;
+        }
+        .bottom-bar {
+            border-top: 1px solid #555;
+            font-size: 0.85rem;
+            color: #b0b0b0;
+        }
+        .toyota-logo-text {
+            font-size: 1.5rem;
+            font-weight: 800;
+            letter-spacing: 1px;
+            color: #ffffff;
+        }
+    </style>
 </head>
 
 <body>
@@ -116,6 +170,26 @@
         </div>
     </header>
     <main>
+        <div id="homeSlider" class="carousel slide carousel-fade" data-bs-ride="carousel">
+            <!-- <div class="carousel-indicators">
+                <button type="button" data-bs-target="#homeSlider" data-bs-slide-to="0" class="active" aria-current="true"
+                    aria-label="Slide 1"></button>
+            </div> -->
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <!-- <img src="assets/images/desktop-banner.jpg" class="d-block w-100" alt="Banner"> -->
+                    <img data-desktop-src="assets/images/desktop-banner.jpg" data-mobile-src="assets/images/mobile-banner.jpg" class="d-block w-100" alt="Banner">
+                </div>
+            </div>
+            <!-- <button class="carousel-control-prev" type="button" data-bs-target="#homeSlider" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#homeSlider" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button> -->
+        </div>
         <div class="container" style="margin-top: 20px;">
             <form name="td_form" id="td_form" method="post" action="send-action.php">
                 <div class="row">
@@ -244,15 +318,221 @@
             </div> -->
         </section>
     </main>
-    <footer>
-        <div class="container">
-            <p>&copy; <?php echo date("Y"); ?> <a href="https://modygroup.co.in/" target="_blank">Mody Group</a></p>
+    <footer class="custom-footer-bg pt-5 pb-3">
+        <div class="container-fluid px-4 px-lg-5">
+            <div class="row mb-4">
+                
+                <!-- Column 1: About Us -->
+                <div class="col-6 col-md-4 col-lg-2 mb-4">
+                    <div class="footer-heading">About Us</div>
+                    <ul class="list-unstyled">
+                        <li class="footer-list-item">Mission</li>
+                        <li class="footer-list-item">Dealer Principal</li>
+                        <li class="footer-list-item">Contact Us</li>
+                        <li class="footer-list-item">Contact Person</li>
+                        <li class="footer-list-item">Special Features</li>
+                        <li class="footer-list-item">Facilities</li>
+                    </ul>
+                    <div class="footer-heading mt-4 mb-0">Price List</div>
+                </div>
+
+                <!-- Column 2: Products -->
+                <div class="col-6 col-md-4 col-lg-2 mb-4">
+                    <div class="footer-heading">Products</div>
+                    <ul class="list-unstyled">
+                        <li class="footer-list-item">TOYOTA Glanza</li>
+                        <li class="footer-list-item">TOYOTA Urban Cruiser Hyryder</li>
+                        <li class="footer-list-item">TOYOTA Urban Cruiser</li>
+                        <li class="footer-list-item">TOYOTA Ebella</li>
+                        <li class="footer-list-item">TOYOTA Innova Crysta</li>
+                        <li class="footer-list-item">TOYOTA Innova Hycross</li>
+                        <li class="footer-list-item">TOYOTA Hilux</li>
+                        <li class="footer-list-item">TOYOTA Fortuner</li>
+                        <li class="footer-list-item">TOYOTA Legender</li>
+                        <li class="footer-list-item">TOYOTA New Camry Hybrid</li>
+                        <li class="footer-list-item">TOYOTA Electric Vehicle</li>
+                        <li class="footer-list-item">TOYOTA Vellfire</li>
+                    </ul>
+                </div>
+
+                <!-- Column 3: Finance & Insurance -->
+                <div class="col-6 col-md-4 col-lg-2 mb-4">
+                    <div class="footer-heading">Finance</div>
+                    <ul class="list-unstyled mb-4">
+                        <li class="footer-list-item">Apply For Loan</li>
+                    </ul>
+                    
+                    <div class="footer-heading">Insurance</div>
+                    <ul class="list-unstyled">
+                        <li class="footer-list-item">Apply For Insurance</li>
+                    </ul>
+
+                    <div class="footer-heading mt-4">Online Request</div>
+                    <ul class="list-unstyled mb-4">
+                        <li class="footer-list-item">Test Drive</li>
+                        <li class="footer-list-item">Brochure</li>
+                    </ul>
+                    
+                    <div class="footer-heading">Q Service</div>
+                </div>
+
+                <!-- Column 6: Address Box -->
+                <div class="col-12 col-md-4 col-lg-6 mb-4">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="mb-3">
+                                <h5 class="mb-0 fw-bold text-white">DEALERSHIPS</h5>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <div class="address-box p-1 d-flex align-items-center justify-content-between">
+                                <div class="address-text flex-grow-1 px-2">
+                                    Mody Toyota, Visakhapatnam<br>
+                                    <div class="mt-2 text-white">
+                                        <span>+91 80960 12222</span><br>
+                                        <span>customercare@modytoyota.com</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <div class="address-box p-1 d-flex align-items-center justify-content-between">
+                                <div class="address-text flex-grow-1 px-2">
+                                    Mody Toyota, Vallabh Nagar<br>
+                                    <div class="mt-2 text-white">
+                                        <span>+91 80960 12222</span><br>
+                                        <span>customercare@modytoyota.com</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <div class="address-box p-1 d-flex align-items-center justify-content-between">
+                                <div class="address-text flex-grow-1 px-2">
+                                    Mody Toyota, Secunderabad<br>
+                                    <div class="mt-2 text-white">
+                                        <span>+91 80960 12222</span><br>
+                                        <span>customercare@modytoyota.com</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <div class="address-box p-1 d-flex align-items-center justify-content-between">
+                                <div class="address-text flex-grow-1 px-2">
+                                    Mody Toyota, Visakhapatnam<br>
+                                    <div class="mt-2 text-white">
+                                        <span>+91 80960 12222</span><br>
+                                        <span>customercare@modytoyota.com</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <div class="address-box p-1 d-flex align-items-center justify-content-between">
+                                <div class="address-text flex-grow-1 px-2">
+                                    Mody Toyota, Srikakulum<br>
+                                    <div class="mt-2 text-white">
+                                        <span>+91 80960 12222</span><br>
+                                        <span>customercare@modytoyota.com</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <div class="address-box p-1 d-flex align-items-center justify-content-between">
+                                <div class="address-text flex-grow-1 px-2">
+                                    Mody Toyota, Medchal Malkajgiri<br>
+                                    <div class="mt-2 text-white">
+                                        <span>+91 80960 12222</span><br>
+                                        <span>customercare@modytoyota.com</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <div class="address-box p-1 d-flex align-items-center justify-content-between">
+                                <div class="address-text flex-grow-1 px-2">
+                                    Mody Toyota, Bowenpally<br>
+                                    <div class="mt-2 text-white">
+                                        <span>+91 80960 12222</span><br>
+                                        <span>customercare@modytoyota.com</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <div class="address-box p-1 d-flex align-items-center justify-content-between">
+                                <div class="address-text flex-grow-1 px-2">
+                                    Mody Toyota, Bowenpally<br>
+                                    <div class="mt-2 text-white">
+                                        <span>+91 80960 12222</span><br>
+                                        <span>customercare@modytoyota.com</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <div class="address-box p-1 d-flex align-items-center justify-content-between">
+                                <div class="address-text flex-grow-1 px-2">
+                                    Mody Toyota, Sangareddy<br>
+                                    <div class="mt-2 text-white">
+                                        <span>+91 80960 12222</span><br>
+                                        <span>customercare@modytoyota.com</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Bottom Copyright Bar -->
+            <div class="bottom-bar pt-3 d-flex flex-column flex-md-row justify-content-between align-items-center">
+                <!-- <div class="d-flex align-items-center mb-2 mb-md-0">
+                    <span class="toyota-logo-text me-4">TOYOTA</span>
+                    <span>Copyright © 2026 TKM. All Rights Reserved.</span>
+                </div>
+                <div>
+                    <span>Powered By:Renaissance Technologies</span>
+                </div> -->
+                <p>&copy; <?php echo date("Y"); ?> <a href="https://modygroup.co.in/" target="_blank">Mody Group</a></p>
+            </div>
         </div>
+        <!-- <div class="container">
+        </div> -->
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.5/dist/jquery.validate.min.js"></script>
 
     <script>
+        function winresize() {
+            var desktop = ($(window).width() > 767) ? true : false;
+
+            $('[data-mobile-src]').each(function () {
+                src = "";
+                if (desktop && $(this).data('desktop-src')) {
+                    src = $(this).data('desktop-src')
+                } else {
+                    src = $(this).data('mobile-src');
+                }
+
+                $(this).attr('src', src);
+            });
+        } 
+
+
+        $(window).resize(function () {
+            winresize();
+        });
+
+        winresize();
+
+
+        $(document).ready(function (event) { 
+            winresize();
+        });
 
         function updateLocations() {
             var salesOrService = document.getElementById("salesORservice").value;

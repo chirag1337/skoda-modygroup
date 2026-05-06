@@ -340,18 +340,18 @@
                 <div class="col-6 col-md-4 col-lg-2 mb-4">
                     <div class="footer-heading">Products</div>
                     <ul class="list-unstyled">
-                        <li class="footer-list-item">Glanza</li>
-                        <li class="footer-list-item">Urban Cruiser Hyryder</li>
-                        <li class="footer-list-item">Urban Cruiser</li>
-                        <li class="footer-list-item">Ebella</li>
-                        <li class="footer-list-item">Innova Crysta</li>
-                        <li class="footer-list-item">Innova Hycross</li>
-                        <li class="footer-list-item">Hilux</li>
-                        <li class="footer-list-item">Fortuner</li>
-                        <li class="footer-list-item">Legender</li>
-                        <li class="footer-list-item">New Camry Hybrid</li>
-                        <li class="footer-list-item">Electric Vehicle</li>
-                        <li class="footer-list-item">Vellfire</li>
+                        <li class="footer-list-item">TOYOTA Glanza</li>
+                        <li class="footer-list-item">TOYOTA Urban Cruiser Hyryder</li>
+                        <li class="footer-list-item">TOYOTA Urban Cruiser</li>
+                        <li class="footer-list-item">TOYOTA Ebella</li>
+                        <li class="footer-list-item">TOYOTA Innova Crysta</li>
+                        <li class="footer-list-item">TOYOTA Innova Hycross</li>
+                        <li class="footer-list-item">TOYOTA Hilux</li>
+                        <li class="footer-list-item">TOYOTA Fortuner</li>
+                        <li class="footer-list-item">TOYOTA Legender</li>
+                        <li class="footer-list-item">TOYOTA New Camry Hybrid</li>
+                        <li class="footer-list-item">TOYOTA Electric Vehicle</li>
+                        <li class="footer-list-item">TOYOTA Vellfire</li>
                     </ul>
                 </div>
 
@@ -507,11 +507,9 @@
     <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.5/dist/jquery.validate.min.js"></script>
 
     <script>
-
-
         function winresize() {
             var desktop = ($(window).width() > 767) ? true : false;
-            
+
             $('[data-mobile-src]').each(function () {
                 src = "";
                 if (desktop && $(this).data('desktop-src')) {
