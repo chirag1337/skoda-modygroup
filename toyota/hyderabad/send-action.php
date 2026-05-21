@@ -4,13 +4,31 @@ $connection = mysqli_connect("34.28.236.146:3306", "skoda-ottomac", "skod@Ottoma
 // $connection = mysqli_connect("localhost", "root", "ottoedge@321", "modygroup_leads");
 
 if (isset($_POST['btnSubmitData'])) {
+    $captcha = trim($_POST['captcha']);
+
+    // CAPTCHA VALIDATION
+    if (
+        !isset($_SESSION['captcha_answer']) ||
+        $captcha != $_SESSION['captcha_answer']
+    ) {
+
+        echo json_encode([
+            'status' => 400,
+            'message' => 'Invalid captcha answer'
+        ]);
+        exit;
+    }
+
+    // OPTIONAL: destroy after use
+    unset($_SESSION['captcha_answer']);
+
     $name = $_POST['name'];
     $mobile = $_POST['mobile'];
     $email = $_POST['email'];
-    $location = $_POST['location'];
+    $location = trim($_POST['location']);
     $model = $_POST['model'];
-    $salesORservice = $_POST['salesORservice'];
-     $city = 'Hyderabad';
+    $salesORservice = trim($_POST['salesORservice']);
+    $city = 'Hyderabad';
 
     if (empty($name) || strlen($name) < 2) {
         echo json_encode(['status' => 400, 'message' => 'Please enter a valid name']);
@@ -40,7 +58,9 @@ if (isset($_POST['btnSubmitData'])) {
             "Uppal",
             "Sangareddy",
             "Kama Reddy",
-            "Jangaon", "Hyderabad", "Secunderabad"
+            "Jangaon",
+            "Hyderabad",
+            "Secunderabad"
         ],
         "Service" => [
             "Karkhana",

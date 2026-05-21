@@ -1,3 +1,12 @@
+<?php
+session_start();
+
+$num1 = rand(1, 9);
+$num2 = rand(0, 9);
+
+$_SESSION['captcha_answer'] = $num1 + $num2;
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -173,6 +182,22 @@
                                 <select class="form-control" name="location" id="location">
                                     <option value="-1">-- Select Location --</option>
                                 </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="row">
+                            <div class="form-group col-md-6">
+                                <label for="captcha">
+                                    Solve: <?php echo $num1 . " + " . $num2; ?> = ? 
+                                    <span class="red">*</span>
+                                </label>
+
+                                <input type="text"
+                                       class="form-control"
+                                       name="captcha"
+                                       id="captcha"
+                                       placeholder="Enter answer">
                             </div>
                         </div>
                     </div>

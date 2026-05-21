@@ -4,6 +4,24 @@ $connection = mysqli_connect("34.28.236.146:3306", "skoda-ottomac", "skod@Ottoma
 // $connection = mysqli_connect("localhost", "root", "ottoedge@321", "modygroup_leads");
 
 if (isset($_POST['btnSubmitData'])) {
+    $captcha = trim($_POST['captcha']);
+
+    // CAPTCHA VALIDATION
+    if (
+        !isset($_SESSION['captcha_answer']) ||
+        $captcha != $_SESSION['captcha_answer']
+    ) {
+
+        echo json_encode([
+            'status' => 400,
+            'message' => 'Invalid captcha answer'
+        ]);
+        exit;
+    }
+
+    // OPTIONAL: destroy after use
+    unset($_SESSION['captcha_answer']);
+
     $name = $_POST['name'];
     $mobile = $_POST['mobile'];
     $email = $_POST['email'];
